@@ -26,7 +26,7 @@ This application is fully responsive and tested to work on the following:
 
 ✅ Microsoft Edge
 
-[Developer Manual](#developer-manual)
+# Developer Manual
 
 Project Setup
 
