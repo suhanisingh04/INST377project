@@ -12,15 +12,7 @@ Go to the [Developer Manual](#developer-manual).
 
 Target Browsers
 
-This application is fully responsive and tested to work on the following:
-
-- Google Chrome (desktop & mobile)
-
-- Safari (iOS)
-
-- Firefox
-
-- Microsoft Edge
+This application is fully responsive and tested to work on Google Chrome (desktop & mobile), Safari (iOS), Firefox, and Microsoft Edge.
 
 # Developer Manual
 
