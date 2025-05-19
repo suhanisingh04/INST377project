@@ -44,15 +44,12 @@
     gap: 2rem;
     padding: 2rem;
   }
-  
+
   .chart-section h2 {
+    color: #0d47a1;
+    font-size: 1.4rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .chart-section h2::before {
-    content: "📈 ";
   }
 
   .chart-section p {
