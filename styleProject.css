@@ -140,3 +140,18 @@ body {
     padding: 0.5rem 0;
     border-bottom: 1px solid #ddd;
   }
+  
+  h1, h2, h3 {
+    color: #1a237e;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  ul li {
+    margin-bottom: 0.75rem;
+  }
