@@ -50,7 +50,7 @@
     </section>
   </main>
 
-  <!-- 3rd Fetch Call – Pixabay Image via secure API proxy -->
+  <!-- Fetch random image from Pixabay -->
   <script>
     fetch('/api/pixabay')
       .then(res => res.json())
@@ -66,12 +66,12 @@
       });
   </script>
 
+  <!-- Comment submission and display -->
   <script>
     const form = document.getElementById('comment-form');
     const input = document.getElementById('comment-input');
     const commentList = document.getElementById('comment-list');
 
-    // Submit comment to /api/submit
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const text = input.value.trim();
@@ -86,19 +86,16 @@
       const result = await res.json();
       if (res.ok) {
         input.value = '';
-        loadComments(); // reload after submit
+        loadComments();
       } else {
         alert(result.error || 'Submission failed');
       }
     });
 
-    // Load and display comments
     async function loadComments() {
       try {
         const res = await fetch('/api/comments');
         const comments = await res.json();
-
-        console.log("Loaded comments:", comments);
 
         commentList.innerHTML = '';
         comments.forEach((c) => {
@@ -106,13 +103,11 @@
           li.textContent = c.text;
           commentList.appendChild(li);
         });
-      } catch (err) {
-        console.error('Failed to load comments:', err);
+      } catch {
         commentList.innerHTML = '<li>Error loading comments.</li>';
       }
     }
 
-    // Load comments on page load
     loadComments();
   </script>
 
