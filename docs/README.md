@@ -4,9 +4,9 @@ Project Title
 
 Healthcare Metrics Dashboard: Visualizing CMS Performance Data
 
-📡 Live Site
+Live Site
 
-Visit the Deployed App Here:👉 https://inst377project-suhani-singhs-projects-651c0451.vercel.app/
+Visit the Deployed App Here: https://inst377project-suhani-singhs-projects-651c0451.vercel.app/
 
 Description
 
@@ -20,13 +20,13 @@ Target Browsers
 
 This application is fully responsive and tested to work on the following:
 
-✅ Google Chrome (desktop & mobile)
+- Google Chrome (desktop & mobile)
 
-✅ Safari (iOS)
+- Safari (iOS)
 
-✅ Firefox
+- Firefox
 
-✅ Microsoft Edge
+- Microsoft Edge
 
 # Developer Manual
 
