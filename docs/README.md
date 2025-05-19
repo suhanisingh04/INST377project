@@ -8,7 +8,7 @@ The dashboard is an interactive tool that simplifies access to important healthc
 
 Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery.
 
-Go to the [Developer Manual](# developer manual).
+Go to the [Developer Manual](#developer-manual).
 
 Target Browsers
 
@@ -22,7 +22,7 @@ This application is fully responsive and tested to work on the following:
 
 - Microsoft Edge
 
-Developer Manual
+# Developer Manual
 
 Project Setup
 
