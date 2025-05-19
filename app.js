@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const vaccinationMetrics = groupByCondition(allData, "Healthcare Personnel Vaccination");
 
-  const sepsisMetrics = groupByCondition(allData, "Sepsis Care")
+  const sepsisMetrics = groupByCondition(allData, "Sepsis Care and Compliance")
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
     .slice(0, 10);
 
