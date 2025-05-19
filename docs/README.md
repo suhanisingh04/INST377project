@@ -55,9 +55,9 @@ package.json
 
 comments.js       # GET comments
 
-submit.js         # POST new comment
-
 pixabay.js        # GET image from Pixabay
+
+submit.js         # POST new comment
 
 /docs
 
@@ -78,16 +78,6 @@ There are currently no automated tests written for this project. Future develope
 
 # API Reference
 
-/api/submit (POST)
-
-Description: Submit a new anonymous comment
-
-Request Body: {
-  "text": "Your comment here"
-}
-
-Response: 201 Created on success, 400 Bad Request for invalid input, 500 Internal Server Error if insert fails
-
 /api/comments (GET)
 
 Description: Retrieve recent comments sorted by timestamp
@@ -102,6 +92,16 @@ Response: [
 Description: Fetch a random healthcare-related image from Pixabay
 
 Response: JSON payload of image hits
+
+/api/submit (POST)
+
+Description: Submit a new anonymous comment
+
+Request Body: {
+  "text": "Your comment here"
+}
+
+Response: 201 Created on success, 400 Bad Request for invalid input, 500 Internal Server Error if insert fails
 
 ## Known Bugs & Limitations
 Anonymous comment submission does not include moderation/spam filtering, No authentication system (all access is public), Relies on Supabase's free tier — may have usage limits
