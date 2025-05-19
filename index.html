@@ -94,15 +94,22 @@
 
     // Load and display comments
     async function loadComments() {
-      const res = await fetch('/api/comments');
-      const comments = await res.json();
+      try {
+        const res = await fetch('/api/comments');
+        const comments = await res.json();
 
-      commentList.innerHTML = '';
-      comments.forEach(c => {
-        const li = document.createElement('li');
-        li.textContent = c.text;
-        commentList.appendChild(li);
-      });
+        console.log("Loaded comments:", comments);
+
+        commentList.innerHTML = '';
+        comments.forEach((c) => {
+          const li = document.createElement('li');
+          li.textContent = c.text;
+          commentList.appendChild(li);
+        });
+      } catch (err) {
+        console.error('Failed to load comments:', err);
+        commentList.innerHTML = '<li>Error loading comments.</li>';
+      }
     }
 
     // Load comments on page load
