@@ -6,7 +6,7 @@ Visit the Deployed App Here: https://inst377project-suhani-singhs-projects-651c0
 
 The dashboard is an interactive tool that simplifies access to important healthcare data. Many healthcare stakeholders struggle to interpret raw CMS datasets. This project addresses that gap by visualizing complex metrics like emergency department wait times, vaccination rates, and sepsis care compliance in a clear and interactive format.
 
-Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery.
+Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, AOS.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery, and the Quotable API to display inspirational health-related quotes.
 
 Go to the [Developer Manual](#developer-manual).
 
