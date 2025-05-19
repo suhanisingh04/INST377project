@@ -155,3 +155,10 @@ body {
   ul li {
     margin-bottom: 0.75rem;
   }
+
+  h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1a237e;
+  }
