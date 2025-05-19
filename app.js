@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const emergencyMetrics = groupByCondition(allData, "Emergency Department")
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
-    .slice(0, 10);
+    .slice(0, 9);
 
   const vaccinationMetrics = groupByCondition(allData, "Healthcare Personnel Vaccination");
 
   const sepsisMetrics = groupByCondition(allData, "Sepsis Care")
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
-    .slice(0, 10);
+    .slice(0, 9);
 
   renderChart(edCtx, emergencyMetrics, "#1565c0"); // Blue
   renderChart(vaxCtx, vaccinationMetrics, "#c62828"); // Red
