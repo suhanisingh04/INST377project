@@ -34,6 +34,8 @@ Developer Manual
 
 Project Setup
 
+Note: This project fulfills the Node.js backend requirement through Vercel's built-in serverless API routes, which allow us to run server-side JavaScript in a Node environment without setting up a manual Express.js server.
+
 1. Install the Project and Dependencies
 
 You must have Node.js and npm installed.
