@@ -70,7 +70,7 @@ Deploy on Vercel, Import the GitHub repo to Vercel, Set environment variables un
 
 npx serve .
 
-Then visit http://localhost:5000 in your browser
+Then visit http://localhost:5000 in your browser.
 
 ## Running Tests
 
