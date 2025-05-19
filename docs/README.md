@@ -99,7 +99,9 @@ Response: [
 
 /api/pixabay (GET)
 
-Description: Fetch a random healthcare-related image from PixabayResponse: JSON payload of image hits
+Description: Fetch a random healthcare-related image from Pixabay
+
+Response: JSON payload of image hits
 
 ## Known Bugs & Limitations
 Anonymous comment submission does not include moderation/spam filtering, No authentication system (all access is public), Relies on Supabase's free tier — may have usage limits
