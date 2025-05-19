@@ -47,7 +47,7 @@ npm install
 
 2. Add Environment Variables
 
-Create a .env file in the project root:
+Note: A local .env file was not used during development, as all API keys were securely configured in Vercel’s Environment Variables panel.
 
 SUPABASE_URL=your-supabase-project-url
 SUPABASE_ANON_KEY=your-anon-key
