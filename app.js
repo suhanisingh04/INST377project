@@ -32,13 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return data.filter(m => m._condition === condition);
   }
 
-  function renderChart(ctx, data, baseColor) {
-    const hoverColorMap = {
-      "#1565c0": "#0d47a1", // Blue → Darker Blue
-      "#c62828": "#b71c1c", // Red → Rich Red
-      "#6a1b9a": "#4a148c"  // Purple → Darker Purple
-    };
-
+  function renderChart(ctx, data, color) {
     const labels = data.map(m => wrapLabel(m.measure_name));
     const scores = data.map(m => parseFloat(m.score));
 
@@ -49,8 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         datasets: [{
           label: 'CMS Score',
           data: scores,
-          backgroundColor: baseColor,
-          hoverBackgroundColor: hoverColorMap[baseColor] || "#424242"
+          backgroundColor: color
         }]
       },
       options: {
@@ -58,14 +51,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { left: 50, right: 30, top: 10, bottom: 10 }
+          padding: {
+            left: 50,
+            right: 30,
+            top: 10,
+            bottom: 10
+          }
         },
         plugins: {
           legend: {
             display: true,
             labels: {
               color: '#1a237e',
-              font: { weight: 'bold', size: 14 }
+              font: {
+                weight: 'bold',
+                size: 14
+              }
             }
           },
           tooltip: {
@@ -73,7 +74,10 @@ document.addEventListener('DOMContentLoaded', async () => {
               title: (context) => data[context[0].dataIndex].measure_name,
               afterLabel: (context) => {
                 const item = data[context.dataIndex];
-                return [`Start Date: ${item.start_date}`, `End Date: ${item.end_date}`];
+                return [
+                  `Start Date: ${item.start_date}`,
+                  `End Date: ${item.end_date}`
+                ];
               }
             }
           }
@@ -83,15 +87,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Score',
-              color: '#1a237e',
-              font: { size: 14, weight: 'bold' }
+              text: 'Score'
             }
           },
           y: {
             ticks: {
               autoSkip: false,
-              font: { size: 12 }
+              font: {
+                size: 12
+              }
             }
           }
         }
@@ -103,15 +107,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const emergencyMetrics = groupByCondition(allData, "Emergency Department")
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
-    .slice(0, 9);
+    .slice(0, 10);
 
   const vaccinationMetrics = groupByCondition(allData, "Healthcare Personnel Vaccination");
 
   const sepsisMetrics = groupByCondition(allData, "Sepsis Care")
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
-    .slice(0, 9);
+    .slice(0, 10);
 
-  renderChart(edCtx, emergencyMetrics, "#1565c0"); // Blue
-  renderChart(vaxCtx, vaccinationMetrics, "#c62828"); // Red
-  renderChart(sepsisCtx, sepsisMetrics, "#6a1b9a"); // Purple
+  renderChart(edCtx, emergencyMetrics, "#42a5f5");
+  renderChart(vaxCtx, vaccinationMetrics, "#66bb6a");
+  renderChart(sepsisCtx, sepsisMetrics, "#ef5350");
 });
