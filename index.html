@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Healthcare Dashboard</title>
+  <link rel="stylesheet" href="styleProject.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to the Healthcare Dashboard</h1>
+
+    <section class="help-info" data-aos="fade-up">
+      <p>
+        This web application helps users visualize key national healthcare metrics using real-time public data from the Centers for Medicare & Medicaid Services (CMS). Navigate through the app to explore trends in emergency department wait times, vaccination rates, and patient care quality.
+      </p>
+      <ol>
+        <li><strong>Dashboard:</strong> Explore interactive bar charts displaying CMS health metrics.</li>
+        <li><strong>About:</strong> Learn about the data sources and project purpose.</li>
+        <li><strong>Home:</strong> You're here! See an overview and a random spotlight image from Pixabay.</li>
+        <li><strong>Chart Tips:</strong> Hover over bars in the Dashboard to see values and date ranges.</li>
+        <li><strong>Mobile Friendly:</strong> The layout is responsive across desktops, tablets, and phones.</li>
+      </ol>
+    </section>
+
+    <section class="image-banner" data-aos="zoom-in">
+      <h2>🩺 Visual Spotlight</h2>
+      <img id="health-image" alt="Healthcare Image" />
+      <p id="image-credit" class="image-credit"></p>
+    </section>
+
+    <section class="comment-section" data-aos="fade-up">
+      <h2>💬 Leave a Comment</h2>
+      <form id="comment-form">
+        <input type="text" id="comment-input" placeholder="Your comment..." required />
+        <button type="submit">Submit</button>
+      </form>
+    
+      <h3>Recent Comments</h3>
+      <ul id="comment-list"></ul>
+    </section>
+  </main>
+
+  <!-- 3rd Fetch Call – Pixabay Image via secure API proxy -->
+  <script>
+    fetch('/api/pixabay')
+      .then(res => res.json())
+      .then(data => {
+        const image = data.hits[Math.floor(Math.random() * data.hits.length)];
+        const img = document.getElementById('health-image');
+        img.src = image.webformatURL;
+        img.alt = image.tags;
+        document.getElementById('image-credit').textContent = `Photo by ${image.user} on Pixabay`;
+      })
+      .catch(() => {
+        document.getElementById('health-image').alt = "Image could not load.";
+      });
+  </script>
+
+  <script>
+    const form = document.getElementById('comment-form');
+    const input = document.getElementById('comment-input');
+    const commentList = document.getElementById('comment-list');
+
+    // Submit comment to /api/submit
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        input.value = '';
+        loadComments(); // reload after submit
+      } else {
+        alert(result.error || 'Submission failed');
+      }
+    });
+
+    // Load and display comments
+    async function loadComments() {
+      const res = await fetch('/api/comments');
+      const comments = await res.json();
+
+      commentList.innerHTML = '';
+      comments.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = c.text;
+        commentList.appendChild(li);
+      });
+    }
+
+    // Load comments on page load
+    loadComments();
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Healthcare Dashboard</title>
+  <link rel="stylesheet" href="styleProject.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>About This Project</h1>
+
+    <section class="about-info" data-aos="fade-up">
+      <p>
+        The <strong>Healthcare Dashboard</strong> is a web application that transforms publicly available data into clear, interactive visualizations. Using datasets from the <a href="https://data.cms.gov/" target="_blank">Centers for Medicare & Medicaid Services (CMS)</a>, this dashboard helps users explore national healthcare metrics such as:
+      </p>
+      <ul>
+        <li>⏱️ Emergency department wait times</li>
+        <li>💉 Vaccination rates among healthcare personnel</li>
+        <li>🧬 Sepsis care quality and outcomes</li>
+      </ul>
+      <p>
+        This project demonstrates modern front-end development practices using:
+        <strong>HTML, CSS (Flexbox/Grid), JavaScript, Chart.js</strong> for data visualization, and <strong>AOS</strong> for scroll-based animations. It also features three API integrations: CMS data, a health-related quote from Quotable, and a healthcare image from Pixabay.
+      </p>
+    </section>
+
+    <section class="quote-box" data-aos="fade-right">
+      <h2>💬 Healthcare Quote of the Day</h2>
+      <p id="quote-text">Loading inspirational quote...</p>
+    </section>
+  </main>
+
+  <script>
+    fetch('https://api.quotable.io/random?tags=health|inspirational')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('quote-text').textContent = `"${data.content}" — ${data.author}`;
+      })
+      .catch(() => {
+        document.getElementById('quote-text').textContent = 'Could not load quote at this time.';
+      });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

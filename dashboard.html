@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Healthcare Metrics</title>
+  <link rel="stylesheet" href="styleProject.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>📊 National Healthcare Metrics Dashboard</h1>
+
+    <section class="chart-section">
+      <p>This section visualizes real-time national metrics from CMS, covering:</p>
+      <ul>
+        <li>⏱️ Emergency Department wait times and patient flow</li>
+        <li>💉 Vaccination coverage among healthcare personnel</li>
+        <li>🧬 Sepsis care performance and treatment efficiency</li>
+      </ul>
+    </section>
+
+    <section class="chart-section">
+      <h2>Emergency Department Metrics</h2>
+      <div class="chart-container" data-aos="fade-up">
+        <canvas id="edChart" width="800" height="900"></canvas>
+      </div>
+
+      <h2>Healthcare Personnel Vaccination</h2>
+      <div class="chart-container" data-aos="fade-up">
+        <canvas id="vaxChart" width="800" height="400"></canvas>
+      </div>
+
+      <h2>Sepsis Care</h2>
+      <div class="chart-container" data-aos="fade-up">
+        <canvas id="sepsisChart" width="800" height="900"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
