@@ -14,6 +14,8 @@ This project is a web-based interactive dashboard that visualizes national healt
 
 The dashboard is built using HTML, CSS Grid/Flexbox, JavaScript, Chart.js, and Supabase for real-time backend functionality. It also uses the Pixabay API to enhance user experience with dynamic healthcare-related imagery.
 
+Go to the [Developer Manual](#developer-manual).
+
 Target Browsers
 
 This application is fully responsive and tested to work on the following:
@@ -25,8 +27,6 @@ This application is fully responsive and tested to work on the following:
 ✅ Firefox
 
 ✅ Microsoft Edge
-
-Go to the [Developer Manual](#developer-manual).
 
 # Developer Manual
 
