@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
     .slice(0, 10);
 
-  renderChart(edCtx, emergencyMetrics, "#42a5f5");
-  renderChart(vaxCtx, vaccinationMetrics, "#66bb6a");
-  renderChart(sepsisCtx, sepsisMetrics, "#ef5350");
+  renderChart(edCtx, emergencyMetrics, "#1565c0"); // Blue
+  renderChart(vaxCtx, vaccinationMetrics, "#c62828"); // Red
+  renderChart(sepsisCtx, sepsisMetrics, "#6a1b9a"); // Purple
 });
