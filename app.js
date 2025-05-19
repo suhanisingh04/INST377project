@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       "#6a1b9a": "#4a148c"  // Purple → Darker Purple
     };
 
-    const labels = data.map(m => wrapLabel(m.measure_name));
+    const labels = data.map(m => {
+      const words = m.measure_name.split(' ');
+      return words.slice(0, 12).join(' ') + '...'; // adjust 12 if needed
+    });
     const scores = data.map(m => parseFloat(m.score));
 
     return new Chart(ctx, {
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { left: 50, right: 30, top: 10, bottom: 10 }
+          padding: { left: 180, right: 30, top: 10, bottom: 10 }
         },
         plugins: {
           legend: {
@@ -91,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           y: {
             ticks: {
               autoSkip: false,
-              font: { size: 12 }
+              font: { size: 12, family: 'monospace' }
             }
           }
         }
