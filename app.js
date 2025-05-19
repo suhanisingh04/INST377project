@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           y: {
             ticks: {
               autoSkip: false,
-              font: { size: 11.5, family: 'Arial' }
+              font: { size: 11, family: 'Arial' }
             }
           }
         }
