@@ -32,7 +32,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     return data.filter(m => m._condition === condition);
   }
 
-  function renderChart(ctx, data, color) {
+  function renderChart(ctx, data, baseColor) {
+    const hoverColorMap = {
+      "#1565c0": "#0d47a1", // Blue → Darker Blue
+      "#c62828": "#b71c1c", // Red → Rich Red
+      "#6a1b9a": "#4a148c"  // Purple → Darker Purple
+    };
+
     const labels = data.map(m => wrapLabel(m.measure_name));
     const scores = data.map(m => parseFloat(m.score));
 
@@ -43,7 +49,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         datasets: [{
           label: 'CMS Score',
           data: scores,
-          backgroundColor: color
+          backgroundColor: baseColor,
+          hoverBackgroundColor: hoverColorMap[baseColor] || "#424242"
         }]
       },
       options: {
@@ -51,22 +58,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: {
-            left: 50,
-            right: 30,
-            top: 10,
-            bottom: 10
-          }
+          padding: { left: 50, right: 30, top: 10, bottom: 10 }
         },
         plugins: {
           legend: {
             display: true,
             labels: {
               color: '#1a237e',
-              font: {
-                weight: 'bold',
-                size: 14
-              }
+              font: { weight: 'bold', size: 14 }
             }
           },
           tooltip: {
@@ -74,10 +73,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               title: (context) => data[context[0].dataIndex].measure_name,
               afterLabel: (context) => {
                 const item = data[context.dataIndex];
-                return [
-                  `Start Date: ${item.start_date}`,
-                  `End Date: ${item.end_date}`
-                ];
+                return [`Start Date: ${item.start_date}`, `End Date: ${item.end_date}`];
               }
             }
           }
@@ -87,15 +83,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Score'
+              text: 'Score',
+              color: '#1a237e',
+              font: { size: 14, weight: 'bold' }
             }
           },
           y: {
             ticks: {
               autoSkip: false,
-              font: {
-                size: 12
-              }
+              font: { size: 12 }
             }
           }
         }
