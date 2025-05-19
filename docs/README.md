@@ -1,20 +1,14 @@
-Healthcare Metrics Dashboard
+CMS Healthcare Metrics Dashboard: Visualizing Performance Data
 
-Project Title
-
-Healthcare Metrics Dashboard: Visualizing CMS Performance Data
-
-Live Site
+Empowering users to understand and explore national healthcare data through interactive visualizations.
 
 Visit the Deployed App Here: https://inst377project-suhani-singhs-projects-651c0451.vercel.app/
 
-Description
+The dashboard is an interactive tool that simplifies access to important healthcare data. Many healthcare stakeholders struggle to interpret raw CMS datasets. This project addresses that gap by visualizing complex metrics like emergency department wait times, vaccination rates, and sepsis care compliance in a clear and interactive format.
 
-This project is a web-based interactive dashboard that visualizes national healthcare performance metrics using real-time public data from the Centers for Medicare & Medicaid Services (CMS). The application focuses on three critical categories: Emergency Department metrics, Healthcare Personnel Vaccination rates, and Sepsis Care outcomes. It allows users to explore healthcare performance trends and submit anonymous comments to provide feedback.
+Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery.
 
-The dashboard is built using HTML, CSS Grid/Flexbox, JavaScript, Chart.js, and Supabase for real-time backend functionality. It also uses the Pixabay API to enhance user experience with dynamic healthcare-related imagery.
-
-Go to the [Developer Manual](#developer-manual).
+Go to the Developer Manual
 
 Target Browsers
 
@@ -28,7 +22,7 @@ This application is fully responsive and tested to work on the following:
 
 - Microsoft Edge
 
-# Developer Manual
+Developer Manual
 
 Project Setup
 
@@ -70,8 +64,6 @@ project-root/
     └── README.md         # This file
 
 Running the Application
-
-You can deploy the app using Vercel or test it locally using any static file server for the frontend.
 
 Deploy on Vercel
 
@@ -119,8 +111,7 @@ Response:
 
 /api/pixabay (GET)
 
-Description: Fetch a random healthcare-related image from Pixabay
-Response: JSON payload of image hits
+Description: Fetch a random healthcare-related image from PixabayResponse: JSON payload of image hits
 
 Known Bugs & Limitations
 
@@ -140,6 +131,10 @@ Add user login system for authenticated feedback
 
 Integrate more granular state-level CMS data
 
+Improve error handling and UX when APIs fail
+
+Add transparency around data freshness and last-updated indicators
+
 Contributors
 
-Suhani Singh (Frontend, API integration, Supabase backend)
+Suhani Singh
