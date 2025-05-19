@@ -10,9 +10,7 @@ Built using modern web technologies, the dashboard enhances healthcare transpare
 
 Go to the [Developer Manual](#developer-manual).
 
-Target Browsers
-
-This application is fully responsive and tested to work on Google Chrome (desktop & mobile), Safari (iOS), Firefox, and Microsoft Edge.
+Target Browsers: This application is fully responsive and tested to work on Google Chrome (desktop & mobile), Safari (iOS), Firefox, and Microsoft Edge.
 
 # Developer Manual
 
@@ -32,6 +30,7 @@ cd inst377-healthcare-dashboard
 npm install
 
 
+
 2. Add Environment Variables
 
 Note: A local .env file was not used during development, as all API keys were securely configured in Vercel’s Environment Variables panel.
@@ -41,6 +40,7 @@ SUPABASE_URL=your-supabase-project-url
 SUPABASE_ANON_KEY=your-anon-key
 
 PIXABAY_API_KEY=your-pixabay-api-key
+
 
 
 3. File Structure Overview
@@ -70,6 +70,7 @@ pixabay.js        # GET image from Pixabay
 README.md         # This file
 
 
+
 Running the Application
 
 Deploy on Vercel
@@ -79,6 +80,7 @@ Import the GitHub repo to Vercel
 Set environment variables under Project > Settings > Environment Variables
 
 Vercel auto-detects and deploys API routes from the /api folder
+
 
 
 Local Testing (Frontend only)
@@ -107,6 +109,7 @@ Response:
 500 Internal Server Error if insert fails
 
 
+
 /api/comments (GET)
 
 Description: Retrieve recent comments sorted by timestamp
@@ -119,9 +122,11 @@ Response:
 ]
 
 
+
 /api/pixabay (GET)
 
 Description: Fetch a random healthcare-related image from PixabayResponse: JSON payload of image hits
+
 
 
 Known Bugs & Limitations
@@ -131,6 +136,7 @@ Anonymous comment submission does not include moderation/spam filtering
 No authentication system (all access is public)
 
 Relies on Supabase's free tier — may have usage limits
+
 
 
 Future Development Roadmap
@@ -146,6 +152,7 @@ Integrate more granular state-level CMS data
 Improve error handling and UX when APIs fail
 
 Add transparency around data freshness and last-updated indicators
+
 
 
 Contributors
