@@ -1,4 +1,4 @@
-body {
+  body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
@@ -6,22 +6,32 @@ body {
   
   nav ul {
     display: flex;
-    background: #2d3e50;
-    padding: 1rem;
-    list-style: none;
-    margin: 0;
     justify-content: center;
     gap: 2rem;
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    background-color: #0d47a1; /* Deep Blue */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+
   nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
+
+  nav ul li a:hover {
+    background-color: #b71c1c; /* Rich Red on hover */
+    color: #fff;
+  }
+
   nav ul li a.active {
-    border-bottom: 2px solid #ff9800;
+    background-color: #d32f2f; /* Highlight Red */
+    color: #fff;
   }
   
   main {
