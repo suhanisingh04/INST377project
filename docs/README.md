@@ -42,17 +42,17 @@ PIXABAY_API_KEY=your-pixabay-api-key
 3. File Structure Overview
 
 project-root/
-├── index.html
-├── about.html
-├── dashboard.html
-├── styleProject.css
-├── package.json
-├── /api
-│   ├── comments.js       # GET comments
-│   ├── submit.js         # POST new comment
-│   └── pixabay.js        # GET image from Pixabay
-└── /docs
-    └── README.md         # This file
+index.html
+about.html
+dashboard.html
+styleProject.css
+package.json
+/api
+comments.js       # GET comments
+submit.js         # POST new comment
+pixabay.js        # GET image from Pixabay
+/docs
+README.md         # This file
 
 Running the Application
 
