@@ -36,22 +36,35 @@ npm install
 Note: A local .env file was not used during development, as all API keys were securely configured in Vercel’s Environment Variables panel.
 
 SUPABASE_URL=your-supabase-project-url
+
 SUPABASE_ANON_KEY=your-anon-key
+
 PIXABAY_API_KEY=your-pixabay-api-key
 
 3. File Structure Overview
 
 project-root/
+
 index.html
+
 about.html
+
 dashboard.html
+
 styleProject.css
+
 package.json
+
 /api
+
 comments.js       # GET comments
+
 submit.js         # POST new comment
+
 pixabay.js        # GET image from Pixabay
+
 /docs
+
 README.md         # This file
 
 Running the Application
