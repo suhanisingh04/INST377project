@@ -28,6 +28,8 @@ This application is fully responsive and tested to work on the following:
 
 Go to the [Developer Manual](#developer-manual).
 
+# Developer Manual
+
 Project Setup
 
 Note: This project fulfills the Node.js backend requirement through Vercel's built-in serverless API routes, which allow us to run server-side JavaScript in a Node environment without setting up a manual Express.js server.
