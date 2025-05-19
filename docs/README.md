@@ -72,6 +72,10 @@ npx serve .
 
 Then visit http://localhost:5000 in your browser
 
+## Running Tests
+
+There are currently no automated tests written for this project. Future developers may add unit or integration tests as needed.
+
 # API Reference
 
 /api/submit (POST)
