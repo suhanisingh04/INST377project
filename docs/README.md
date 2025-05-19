@@ -63,10 +63,10 @@ pixabay.js        # GET image from Pixabay
 
 README.md         # This file
 
-# Running the Application
+## Running the Application
 Deploy on Vercel, Import the GitHub repo to Vercel, Set environment variables under Project > Settings > Environment Variables, Vercel auto-detects and deploys API routes from the /api folder
 
-# Local Testing (Frontend only)
+## Local Testing (Frontend only)
 
 npx serve .
 
@@ -101,11 +101,11 @@ Response: [
 
 Description: Fetch a random healthcare-related image from PixabayResponse: JSON payload of image hits
 
-# Known Bugs & Limitations
+## Known Bugs & Limitations
 Anonymous comment submission does not include moderation/spam filtering, No authentication system (all access is public), Relies on Supabase's free tier — may have usage limits
 
-# Future Development Roadmap
+## Future Development Roadmap
 Add filtering or search for metrics, Improve accessibility (ARIA roles, keyboard nav), Add user login system for authenticated feedback, Integrate more granular state-level CMS data, Improve error handling and UX when APIs fail, Add transparency around data freshness and last-updated indicators
 
-# Contributors
+## Contributors
 Suhani Singh
