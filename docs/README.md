@@ -47,7 +47,6 @@ project-root/
 ├── dashboard.html
 ├── styleProject.css
 ├── package.json
-├── .env
 ├── /api
 │   ├── comments.js       # GET comments
 │   ├── submit.js         # POST new comment
