@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { left: 200, right: 30, top: 10, bottom: 10 }
+          padding: { left: 170, right: 30, top: 10, bottom: 10 }
         },
         plugins: {
           legend: {
