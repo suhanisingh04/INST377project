@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const labels = data.map(m => {
       const words = m.measure_name.split(' ');
-      return words.slice(0, 16).join(' ') + '...'; // adjust 12 if needed
+      return words.slice(0, 16).join(' ') + '...';
     });
     const scores = data.map(m => parseFloat(m.score));
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { left: 20, right: 30, top: 10, bottom: 10 }
+          padding: { left: 5, right: 30, top: 10, bottom: 10 }
         },
         plugins: {
           legend: {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           y: {
             ticks: {
               autoSkip: false,
-              font: { size: 11, family: 'Arial' }
+              font: { size: 12, family: 'Arial' }
             }
           }
         }
