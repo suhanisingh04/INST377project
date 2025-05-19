@@ -17,23 +17,22 @@
   </nav>
 
   <main>
-    <h1>Welcome to the Healthcare Dashboard</h1>
+    <h1 data-aos="fade-down">Welcome to the Healthcare Metrics Dashboard</h1>
 
     <section class="help-info" data-aos="fade-up">
+      <h2>📘 Getting Started</h2>
       <p>
-        This web application helps users visualize key national healthcare metrics using real-time public data from the Centers for Medicare & Medicaid Services (CMS). Navigate through the app to explore trends in emergency department wait times, vaccination rates, and patient care quality.
+        This dashboard transforms complex CMS healthcare data into interactive visuals, helping patients, providers, and policymakers make data-driven decisions.
       </p>
-      <ol>
-        <li><strong>Dashboard:</strong> Explore interactive bar charts displaying CMS health metrics.</li>
-        <li><strong>About:</strong> Learn about the data sources and project purpose.</li>
-        <li><strong>Home:</strong> You're here! See an overview and a random spotlight image from Pixabay.</li>
-        <li><strong>Chart Tips:</strong> Hover over bars in the Dashboard to see values and date ranges.</li>
-        <li><strong>Mobile Friendly:</strong> The layout is responsive across desktops, tablets, and phones.</li>
-      </ol>
+      <ul>
+        <li><strong>Dashboard:</strong> View real-time metrics for emergency care, vaccination, and sepsis compliance.</li>
+        <li><strong>About:</strong> Learn what the metrics mean and how the system works.</li>
+        <li><strong>Home:</strong> You're here! Get started and explore helpful tools below.</li>
+      </ul>
     </section>
 
     <section class="image-banner" data-aos="zoom-in">
-      <h2>🩺 Visual Spotlight</h2>
+      <h2>🩺 Spotlight Image</h2>
       <img id="health-image" alt="Healthcare Image" />
       <p id="image-credit" class="image-credit"></p>
     </section>
@@ -44,13 +43,13 @@
         <input type="text" id="comment-input" placeholder="Your comment..." required />
         <button type="submit">Submit</button>
       </form>
-    
-      <h3>Recent Comments</h3>
+
+      <h3>🗒️ Recent Comments</h3>
       <ul id="comment-list"></ul>
     </section>
   </main>
 
-  <!-- Fetch random image from Pixabay -->
+  <!-- Fetch Pixabay Image -->
   <script>
     fetch('/api/pixabay')
       .then(res => res.json())
@@ -66,7 +65,7 @@
       });
   </script>
 
-  <!-- Comment submission and display -->
+  <!-- Comment Form Script -->
   <script>
     const form = document.getElementById('comment-form');
     const input = document.getElementById('comment-input');
