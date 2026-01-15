@@ -1,4 +1,4 @@
-# CMS Healthcare Metrics Dashboard: Visualizing Performance Data
+# CMS Healthcare Metrics Dashboard: Visualizing Performance Data (2024-2025)
 
 Empowering users to understand and explore national healthcare data through interactive visualizations.
 
@@ -8,7 +8,7 @@ Go to the [Developer Manual](#developer-manual).
 
 The dashboard is an interactive tool that simplifies access to important healthcare data. Many healthcare stakeholders struggle to interpret raw CMS datasets. This project addresses that gap by visualizing complex metrics like emergency department wait times, vaccination rates, and sepsis care compliance in a clear and interactive format.
 
-Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, AOS.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery, and the Quotable API to display inspirational health-related quotes.
+Built using modern web technologies, the dashboard enhances healthcare transparency and helps users make informed, data-driven decisions. It uses HTML, CSS Grid/Flexbox, JavaScript, Chart.js, AOS.js, and Supabase for real-time backend functionality. It also integrates the Pixabay API to enhance user experience with dynamic healthcare-related imagery, and the Zen Quotes API to display inspirational health-related quotes.
 
 This application is fully responsive and tested to work on Google Chrome (desktop & mobile), Safari (iOS), Firefox, and Microsoft Edge.
 
@@ -41,27 +41,33 @@ PIXABAY_API_KEY=your-pixabay-api-key
 
 project-root/
 
-index.html
+index.html        # Home page (intro, quote of the day, imagery)
 
-about.html
+about.html        # Project background and purpose
 
-dashboard.html
+dashboard.html    # Interactive CMS healthcare metrics dashboard
 
-styleProject.css
+styleProject.css  # Global styles using CSS Grid and Flexbox
 
-package.json
+package.json      # Project metadata and dependencies
 
-/api
+app.js            # Shared frontend JavaScript logic
 
-comments.js       # GET comments
+/api              # Vercel serverless API routes (Node.js backend)
 
-pixabay.js        # GET image from Pixabay
+comments.js       # GET: retrieve comments from Supabase
 
-submit.js         # POST new comment
+pixabay.js        # GET: fetch healthcare-related images from Pixabay
+
+submit.js         # POST: submit a new anonymous comment
+
+cms.js            # GET: retrieve CMS healthcare performance data
+
+quote.js          # GET: return a Zen-inspired healthcare quote
 
 /docs
 
-README.md         # This file
+README.md         # Project documentation
 
 ## Running the Application
 Deploy on Vercel, Import the GitHub repo to Vercel, Set environment variables under Project > Settings > Environment Variables, Vercel auto-detects and deploys API routes from the /api folder
@@ -102,6 +108,21 @@ Request Body: {
 }
 
 Response: 201 Created on success, 400 Bad Request for invalid input, 500 Internal Server Error if insert fails
+
+/api/cms (GET)
+
+Description: Retrieve healthcare performance metrics from CMS datasets used to populate dashboard visualizations (e.g., emergency department wait times, vaccination rates, and care compliance measures).
+
+Response: Structured JSON containing CMS metric values formatted for frontend chart rendering.
+
+/api/quote (GET)
+
+Description: Return a Zen-inspired, healthcare-themed quote focused on mindfulness, compassion, and healing. This endpoint avoids fully random content to maintain a calm and consistent tone.
+
+Response: {
+  "text": "Wherever the art of medicine is loved, there is also a love of humanity.",
+  "author": "Hippocrates"
+}
 
 ## Known Bugs & Limitations
 Anonymous comment submission does not include moderation/spam filtering, No authentication system (all access is public), Relies on Supabase's free tier — may have usage limits
